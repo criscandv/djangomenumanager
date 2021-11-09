@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"id":{"$numberInt":"1"}},"name":"__primary_key__","unique":true}],"uuid":"fbaa99117e2e47379ccd8fa85645b7d4","collectionName":"api_plates","type":"collection"}

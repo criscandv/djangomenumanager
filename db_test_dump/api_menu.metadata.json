@@ -1,0 +1,1 @@
+{"indexes":[{"v":{"$numberInt":"2"},"key":{"_id":{"$numberInt":"1"}},"name":"_id_"},{"v":{"$numberInt":"2"},"key":{"id":{"$numberInt":"1"}},"name":"__primary_key__","unique":true},{"v":{"$numberInt":"2"},"key":{"sections_id":{"$numberInt":"1"}},"name":"api_menu_sections_id_f95569aa"}],"uuid":"140798e397c54c4d8db6b6b4ffef70b1","collectionName":"api_menu","type":"collection"}
