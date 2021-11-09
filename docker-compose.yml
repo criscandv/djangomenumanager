@@ -1,0 +1,41 @@
+version: '3.9'
+
+services:
+  db:
+    container_name: cont_mongo
+    image: mongo
+    restart: always
+    environment:
+      - MONGO_INITDB_DATABASE=db_test
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=thepassis1
+    ports:
+      - 27017:27017
+    volumes:
+      - ./db:/data/db
+
+  back:
+    container_name: cont_back
+    build: ./back
+    command: python manage.py migrate
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./back:/usr/src/back
+    ports:
+      - 8000:8000
+    environment:
+      DB_NAME: 'db_test'
+      DB_HOST: xxx.xxx.x.xx
+      DB_USERNAME: 'root'
+      DB_PASSWD: 'thepassis1'
+  
+  front:
+    container_name: cont_front
+    build: ./front
+    command: npm start
+    stdin_open: true
+    volumes:
+      - ./front:/usr/src
+      - /usr/src/node_modules
+    ports:
+      - 3000:3000
